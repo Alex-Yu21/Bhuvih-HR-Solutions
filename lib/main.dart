@@ -1,3 +1,4 @@
+import 'package:bhuvih_hr_solutions/presentation/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const App());
@@ -20,6 +21,20 @@ class RootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        // TODO: наполнить AppBar
+        title: const Text('Label'),
+        centerTitle: true,
+      ),
+      body: const LandingPage(),
+      bottomNavigationBar: NavigationBar(
+        // TODO: наполнить NavigationBar
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.business), label: 'Label'),
+        ],
+      ),
+    );
   }
 }
