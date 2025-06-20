@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   static const _labels = ['Employee', 'Employer', 'Training'];
   static const _adsFraction = 0.10;
