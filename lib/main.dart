@@ -1,3 +1,4 @@
+import 'package:bhuvih_hr_solutions/presentation/resources/theme.dart';
 import 'package:bhuvih_hr_solutions/presentation/root_view.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bhuvih HR Solutions',
+      theme: appTheme,
       debugShowCheckedModeBanner: false,
       home: const RootView(),
     );
