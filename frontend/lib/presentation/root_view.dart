@@ -11,7 +11,6 @@ class RootView extends StatefulWidget {
 class _RootViewState extends State<RootView> {
   int _currentIndex = 0;
 
-  // Здесь можно добавить свои страницы
   static const List<Widget> _pages = [
     HomeView(),
     Center(child: Text('Jobs')), // TODO: real screens
