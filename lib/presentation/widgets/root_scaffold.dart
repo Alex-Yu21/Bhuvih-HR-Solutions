@@ -1,3 +1,4 @@
+import 'package:bhuvih_hr_solutions/presentation/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -34,6 +35,7 @@ class KoluvuScaffold extends StatelessWidget {
           ],
         ),
       ),
+      endDrawer: AppDrawer(),
       body: child,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.secondary,

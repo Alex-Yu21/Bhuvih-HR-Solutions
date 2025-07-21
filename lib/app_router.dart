@@ -41,6 +41,42 @@ final GoRouter appRouter = GoRouter(
           pageBuilder: (context, state) =>
               const NoTransitionPage(child: TrainingView()),
         ),
+        GoRoute(
+          path: '/employee',
+          name: 'employee',
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: EmployeeView()),
+        ),
+        GoRoute(
+          path: '/employer',
+          name: 'employer',
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: EmployerView()),
+        ),
+        GoRoute(
+          path: '/partner',
+          name: 'partner',
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: PartnerView()),
+        ),
+        GoRoute(
+          path: '/ats',
+          name: 'ats',
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: AtsView()),
+        ),
+        GoRoute(
+          path: '/resume-builder',
+          name: 'resume-builder',
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: ResumeBuilderView()),
+        ),
+        GoRoute(
+          path: '/ai-mock-interview',
+          name: 'ai-mock-interview',
+          pageBuilder: (context, state) =>
+              const NoTransitionPage(child: AiMockInterviewView()),
+        ),
       ],
     ),
   ],
@@ -80,4 +116,42 @@ class TrainingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(child: Text('Training'));
   }
+}
+
+class EmployeeView extends StatelessWidget {
+  const EmployeeView({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Employee'));
+}
+
+class EmployerView extends StatelessWidget {
+  const EmployerView({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Employer'));
+}
+
+class PartnerView extends StatelessWidget {
+  const PartnerView({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Partner'));
+}
+
+class AtsView extends StatelessWidget {
+  const AtsView({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('ATS'));
+}
+
+class ResumeBuilderView extends StatelessWidget {
+  const ResumeBuilderView({super.key});
+  @override
+  Widget build(BuildContext context) =>
+      const Center(child: Text('Resume Builder'));
+}
+
+class AiMockInterviewView extends StatelessWidget {
+  const AiMockInterviewView({super.key});
+  @override
+  Widget build(BuildContext context) =>
+      const Center(child: Text('AI Mock Interview'));
 }
