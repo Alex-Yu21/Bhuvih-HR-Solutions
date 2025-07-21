@@ -1,26 +1,18 @@
-import 'package:bhuvih_hr_solutions/presentation/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class RootView extends StatefulWidget {
-  const RootView({super.key});
+class KoluvuScaffold extends StatelessWidget {
+  final Widget child;
+  final GoRouterState state;
 
-  @override
-  State<RootView> createState() => _RootViewState();
-}
+  const KoluvuScaffold({super.key, required this.child, required this.state});
 
-class _RootViewState extends State<RootView> {
-  int _currentIndex = 0;
-
-  static const List<Widget> _pages = [
-    HomeView(),
-    Center(child: Text('Jobs')), // TODO: real screens
-    Center(child: Text('Companies')),
-    Center(child: Text('Labs')),
-    Center(child: Text('Training')),
-  ];
+  static const _paths = ['/', '/jobs', '/companies', '/govt-jobs', '/training'];
 
   @override
   Widget build(BuildContext context) {
+    final currentIndex = _paths.indexOf(state.matchedLocation);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 4,
@@ -41,14 +33,14 @@ class _RootViewState extends State<RootView> {
           ],
         ),
       ),
-      body: _pages[_currentIndex],
+      body: child,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        onTap: (idx) => setState(() => _currentIndex = idx),
+        currentIndex: currentIndex < 0 ? 0 : currentIndex,
+        onTap: (index) => context.go(_paths[index]),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -63,8 +55,8 @@ class _RootViewState extends State<RootView> {
             label: 'Companies',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.science_outlined),
-            label: 'Labs',
+            icon: Icon(Icons.business_outlined),
+            label: 'Govt jobs',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book_outlined),
