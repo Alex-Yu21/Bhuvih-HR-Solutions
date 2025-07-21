@@ -1,4 +1,4 @@
-import 'package:bhuvih_hr_solutions/presentation/root_view.dart';
+import 'package:bhuvih_hr_solutions/presentation/widgets/root_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

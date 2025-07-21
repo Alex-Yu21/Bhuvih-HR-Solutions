@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class KoluvuScaffold extends StatelessWidget {
@@ -16,16 +17,16 @@ class KoluvuScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 4,
-        titleSpacing: 16,
+        titleSpacing: 16.w,
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Row(
           children: [
-            Image.asset('assets/icons/koluvu.png', height: 40),
-            const SizedBox(width: 12),
-            const Text(
+            Image.asset('assets/icons/koluvu.png', height: 40.h),
+            SizedBox(width: 12.w),
+            Text(
               'Koluvu',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
               ),
@@ -35,7 +36,7 @@ class KoluvuScaffold extends StatelessWidget {
       ),
       body: child,
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white70,
         type: BottomNavigationBarType.fixed,
