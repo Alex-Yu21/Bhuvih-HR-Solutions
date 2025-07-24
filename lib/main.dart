@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'companies_screen.dart';
 
 void main() => runApp(const App());
 
@@ -10,16 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Bhuvih HR Solutions',
       debugShowCheckedModeBanner: false,
-      home: const RootScreen(),
+      home: CompaniesScreen(), // ✅ Correct class name!
     );
-  }
-}
-
-class RootScreen extends StatelessWidget {
-  const RootScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
   }
 }
